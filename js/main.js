@@ -99,11 +99,33 @@ function solicitarVehiculo() {
     let vehiculo = Number(prompt("¿Que tipo de vehiculo prefiere? Escriba 1 si busca auto y 2 si busca moto"))
     if (vehiculo === 1) {
         alert ("Genial! Ahora te pasaremos una lista de los autos que tenemos")
-        alert ("1.Corsa 2.")
+        alert ("1.Chevrolet Corsa 2. Volkswagen Polo 3.Peugeot 308 4.Volkswagen Amarok 5.Audi A3 6.Ford Focus")
+        let opcionSeleccionada = prompt("¿Que auto va a llevar?")
+        alert("Genial! asi que va a llevar el auto N°" + opcionSeleccionada)
+        alert("Genial!, Serian" + auto3.precio)
+        let vehiculoSeleccionado = prompt("Escriba SI para continuar con la comrpa, si se equivoco o no quiere comprar el auto escriba NO")
     }
     if (vehiculo === 2){
         alert ("Genial! Ahora te pasaremos una lista de las motocicletas que tenemos")
+        alert("1.XTZ 150cc 2.Honda Xr Tornado 250cc 3.Kawasaki Ninja ZX-6R 600cc 4.Yamaha XTZ 250cc")
+        let opcionSeleccionada = prompt("¿Que moto va a llevar?")
+        let vehiculoSeleccionado = prompt("Genial! asi que va a llevar la moto N°" + opcionSeleccionada)
+    }
+
+}
+function solicitarPago(){
+    let pago = prompt("¿Cómo quieres realizar el pago? 1.Efectivo 2.Credito 3.Debito, escriba los numeros correspondientes")
+    if (pago === 1) {
+        alert ("Genial! Serian")
+    }
+    if (pago === 2) {
+        alert ("Genial! Serian")
+    }
+    if (pago === 3) {
+        alert ("Genial! Serian")
     }
 }
+
 solicitarCuenta()
 solicitarVehiculo()
+solicitarPago()
