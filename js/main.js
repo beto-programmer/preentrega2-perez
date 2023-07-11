@@ -1,8 +1,10 @@
 function solicitarCuenta() {
     alert("Bienvenido a consencionaria Car Luxury! Sigue los pasos para crear tu cuenta")
     let correo = String(prompt("Ingrese su correo electronico para poder empezar a crear su cuenta"))
+    let usuario = String(prompt("Ingrese su nombre"))
     let contraseña = String(prompt("Ingrese su contraseña"))
     alert("Listo! Su cuenta ya ha sido creada")
+    alert("Bienvenido " + usuario)
 }
 const listaAutos = [
  {
@@ -66,14 +68,16 @@ const listaAutos = [
     motor: "1.6",
 }
 ];
-const moto1 = {
+
+const listaMotos = [
+{
     marca: "Yamaha",
     modelo: "XTZ 150cc",
     año: 2021,
     precio: "$1.794.500",
     color: "Blanco",
-}
-const listaMotos = [
+},
+    
 {
     marca: "Honda",
     modelo: "Xr Tornado 250cc",
