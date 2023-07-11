@@ -10,6 +10,9 @@
     display: flex;
     justify-content: center;
 }
+.header-titulo{
+    font-weight: bold;
+}
 .seccion {
     display: flex;
     justify-content: center;
