@@ -4,8 +4,8 @@ function solicitarCuenta() {
     let contraseña = String(prompt("Ingrese su contraseña"))
     alert("Listo! Su cuenta ya ha sido creada")
 }
-
-const auto1 =  {
+const listaAutos = [
+ {
     marca: "Chevrolet",
     modelo: "Corsa",
     año: 2014,
@@ -14,8 +14,8 @@ const auto1 =  {
     transmisión: "Manual",
     color: "Negro",
     motor: 1.6,
-}
-const auto2 =  {
+},
+{
     marca: "Volkswagen",
     modelo: "Polo",
     año: 2021,
@@ -24,8 +24,8 @@ const auto2 =  {
     transmisión: "Manual",
     color: "Blanco",
     motor: 1.6,
-}
-const auto3 =  {
+},
+{
     marca: "Peugeot",
     modelo: 308,
     año: 2023,
@@ -34,8 +34,8 @@ const auto3 =  {
     transmisión: "Manual",
     color: "Blanco",
     motor: 1.6,
-}
-const auto4 =  {
+},
+{
     marca: "Volkswagen",
     modelo: "Amarok",
     año: 2023,
@@ -44,8 +44,8 @@ const auto4 =  {
     transmisión: "Automatico",
     color: "Negro",
     motor: "V6",
-}
-const auto5 =  {
+},
+{
     marca: "Audi",
     modelo: "A3",
     año: 2014,
@@ -54,8 +54,8 @@ const auto5 =  {
     transmisión: "Automatico",
     color: "Gris",
     motor: "1.8T",
-}
-const auto6 =  {
+},
+{
     marca: "Ford",
     modelo: "Focus",
     año: 2017,
@@ -65,7 +65,7 @@ const auto6 =  {
     color: "Azul",
     motor: "1.6",
 }
-const listaAutos = [auto1, auto2, auto3, auto4, auto5, auto6]
+];
 const moto1 = {
     marca: "Yamaha",
     modelo: "XTZ 150cc",
@@ -73,43 +73,54 @@ const moto1 = {
     precio: "$1.794.500",
     color: "Blanco",
 }
-const moto2 = {
+const listaMotos = [
+{
     marca: "Honda",
     modelo: "Xr Tornado 250cc",
     año: 2018,
     precio:"$1.940.000",
     color: "Negro",
-}
-const moto3 = {
+},
+{
     marca: "Kawasaki",
     modelo: "Ninja ZX-6R 600cc",
     año: 2019,
     precio: "$11.640.000",
     color: "Verde",
-}
-const moto4 = {
+},
+{
     marca: "Yamaha",
     modelo: "XTZ 250cc",
     año: 2020,
     precio: "$2.500.000",
     color: "Rojo",
 }
-const listaMotos = [moto1, moto2, moto3, moto4]
+]
 function solicitarVehiculo() {
     let vehiculo = Number(prompt("¿Que tipo de vehiculo prefiere? Escriba 1 si busca auto y 2 si busca moto"))
     if (vehiculo === 1) {
         alert ("Genial! Ahora te pasaremos una lista de los autos que tenemos")
         alert ("1.Chevrolet Corsa 2. Volkswagen Polo 3.Peugeot 308 4.Volkswagen Amarok 5.Audi A3 6.Ford Focus")
-        let opcionSeleccionada = prompt("¿Que auto va a llevar?")
-        alert("Genial! asi que va a llevar el auto N°" + opcionSeleccionada)
-        alert("Genial!, Serian ")
+        let seleccion = prompt("Elige un producto (1-" + listaAutos.length + "):");
+
+        if (seleccion >= 1 && seleccion <= listaAutos.length) {
+          let productoElegido = listaAutos[seleccion - 1];
+          alert("El precio del producto " + productoElegido.modelo + " es: " + productoElegido.precio);
+        } else {
+          alert("Selección inválida.");
+        }
     }
     if (vehiculo === 2){
         alert ("Genial! Ahora te pasaremos una lista de las motocicletas que tenemos")
         alert("1.XTZ 150cc 2.Honda Xr Tornado 250cc 3.Kawasaki Ninja ZX-6R 600cc 4.Yamaha XTZ 250cc")
-        let opcionSeleccionada = prompt("¿Que moto va a llevar?")
-        let vehiculoSeleccionado = prompt("Genial! asi que va a llevar la moto N°" + opcionSeleccionada)
-        alert("Genial!, Serian ")
+        let seleccion = prompt("Elige un producto (1-" + listaMotos.length + "):");
+
+        if (seleccion >= 1 && seleccion <= listaMotos.length) {
+          let productoElegido = listaMotos[seleccion - 1];
+          alert("El precio del producto " + productoElegido.modelo + " es: " + productoElegido.precio);
+        } else {
+          alert("Selección inválida.");
+        }
     }
 
 }
@@ -117,7 +128,6 @@ function solicitarPago(){
     let pago = prompt("¿Cómo quieres realizar el pago? 1.Efectivo 2.Credito 3.Debito, escriba los numeros correspondientes")
     alert ("Muchas gracias por tu compra!")
 }
-
 solicitarCuenta()
 solicitarVehiculo()
 solicitarPago()
