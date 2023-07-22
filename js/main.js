@@ -1,11 +1,6 @@
-function solicitarCuenta() {
-    alert("Bienvenido a consencionaria Car Luxury! Sigue los pasos para crear tu cuenta")
-    let correo = String(prompt("Ingrese su correo electronico para poder empezar a crear su cuenta"))
-    let usuario = String(prompt("Ingrese su nombre"))
-    let contraseña = String(prompt("Ingrese su contraseña"))
-    alert("Listo! Su cuenta ya ha sido creada")
-    alert("Bienvenido " + usuario)
-}
+const username = document.querySelector ("")
+const contraseña = document.querySelector ("")
+const button = document.querySelector ("")
 const listaAutos = [
  {
     marca: "Chevrolet",
@@ -132,6 +127,6 @@ function solicitarPago(){
     let pago = prompt("¿Cómo quieres realizar el pago? 1.Efectivo 2.Credito 3.Debito, escriba los numeros correspondientes")
     alert ("Muchas gracias por tu compra!")
 }
-solicitarCuenta()
+
 solicitarVehiculo()
 solicitarPago()
