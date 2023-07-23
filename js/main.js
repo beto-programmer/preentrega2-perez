@@ -1,6 +1,16 @@
-const username = document.querySelector ("")
-const contraseña = document.querySelector ("")
-const button = document.querySelector ("")
+const username = document.querySelector ("#usuario")
+const password = document.querySelector ("#password")
+const button = document.querySelector ("#btn")
+
+
+
+
+
+
+
+
+
+
 const listaAutos = [
  {
     marca: "Chevrolet",
@@ -128,5 +138,3 @@ function solicitarPago(){
     alert ("Muchas gracias por tu compra!")
 }
 
-solicitarVehiculo()
-solicitarPago()

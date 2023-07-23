@@ -48,3 +48,47 @@
     font-size: 18px;
     color: #333;
   }
+  .registrar__seccion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgb(196, 0, 0);
+  }
+  .registrar__form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: white;
+    padding: 3em 5em;
+    box-shadow: 0 5px 10px #333;
+    border-radius: 10px;
+  }
+.registrar__titulo {
+    padding-bottom: 1em;
+    font-size: 2rem;
+}
+.registrar__btn {
+    border: solid black 1px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    padding: 0.5em;
+}
+form label {
+    margin-bottom: 1em;
+}
+form label input {
+    outline: none;
+    border: none;
+    border-bottom: #333 solid 1px;
+    padding: 0 5px;
+    font-size: 1.5rem;
+}
+form label input::placeholder {
+    color: #33333364;
+}
+.registrar__btn:hover {
+    background-color: rgba(196, 0, 0, 0.923);
+    color: white;
+}
