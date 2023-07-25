@@ -1,16 +1,3 @@
-const username = document.querySelector ("#usuario")
-const password = document.querySelector ("#password")
-const button = document.querySelector ("#btn")
-
-
-
-
-
-
-
-
-
-
 const listaAutos = [
  {
     marca: "Chevrolet",
