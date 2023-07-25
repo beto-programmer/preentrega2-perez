@@ -47,6 +47,22 @@
   .tarjeta h3 {
     font-size: 18px;
     color: #333;
+    padding-bottom: 1em;
+  }
+  .tarjeta__btn {
+    background-color: rgb(196, 0, 0);
+    color: white;
+    border: solid 2px black;
+    padding: 0.5em;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+  }
+  .tarjeta__btn:hover {
+    background-color: white;
+    color: rgb(196, 0, 0);
+    border: solid 2px black;
+    border-radius: 10px;
+    transform: scale(1.2);
   }
   .registrar__seccion {
     display: flex;
