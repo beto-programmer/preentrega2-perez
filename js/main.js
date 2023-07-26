@@ -1,127 +1,131 @@
 const listaAutos = [
- {
-    marca: "Chevrolet",
-    modelo: "Corsa",
-    año: 2014,
-    precio: "$2.600.000",
-    puertas: 4,
-    transmisión: "Manual",
-    color: "Negro",
-    motor: 1.6,
-},
+    {
+        id: "auto1",
+        titulo: "Chevrolet Corsa",
+        imagen: "../img/Corsa.webp",
+        precio: "$2.600.000",
+    },
+
 {
-    marca: "Volkswagen",
-    modelo: "Polo",
-    año: 2021,
+    id: "auto2",
+    titulo: "Volkswagen Polo",
+    imagen: "../img/vw-polo-2021.png",
     precio: "$5.000.000",
-    puertas: 4,
-    transmisión: "Manual",
-    color: "Blanco",
-    motor: 1.6,
 },
 {
-    marca: "Peugeot",
-    modelo: 308,
-    año: 2023,
+    id: "auto3",
+    titulo: "Peugeot 308",
+    imagen: "../img/blanco.avif",
     precio: "$10.500.000",
-    puertas: 4,
-    transmisión: "Manual",
-    color: "Blanco",
-    motor: 1.6,
 },
 {
-    marca: "Volkswagen",
-    modelo: "Amarok",
-    año: 2023,
+    id: "auto4",
+    titulo: "Volkswagen Amarok",
+    imagen: "../img/vw-amarok-2021.png",
     precio: "$23.000.000",
-    puertas: 4,
-    transmisión: "Automatico",
-    color: "Negro",
-    motor: "V6",
 },
 {
-    marca: "Audi",
-    modelo: "A3",
-    año: 2014,
+    id: "auto5",
+    titulo: "Audi A3",
+    imagen: "../img/Audi-A3-Sedan-Argentina-1.png.webp",
     precio: "$19.900.000",
-    puertas: 3,
-    transmisión: "Automatico",
-    color: "Gris",
-    motor: "1.8T",
 },
 {
-    marca: "Ford",
-    modelo: "Focus",
-    año: 2017,
+    id: "auto6",
+    titulo: "Ford Focus",
+    imagen: "../img/2017-ford-focus-se-sedan-angular-front.avif",
     precio: "$5.800.000",
-    puertas: 4,
-    transmisión: "Manual",
-    color: "Azul",
-    motor: "1.6",
 }
-];
+]
 
 const listaMotos = [
 {
-    marca: "Yamaha",
-    modelo: "XTZ 150cc",
-    año: 2021,
+    id: "moto1",
+    titulo: "Yamaha XTZ 150cc",
+    imagen: "../img/XTZ150_color_azul.png",
     precio: "$1.794.500",
-    color: "Blanco",
 },
     
 {
-    marca: "Honda",
-    modelo: "Xr Tornado 250cc",
-    año: 2018,
+    id: "moto2",
+    titulo: "Honda Xr Tornado 250cc",
+    imagen: "../img/xr250.png",
     precio:"$1.940.000",
-    color: "Negro",
 },
 {
-    marca: "Kawasaki",
-    modelo: "Ninja ZX-6R 600cc",
-    año: 2019,
+    id: "moto3",
+    titulo: "Kawasaki Ninja ZX-6R 600cc",
+    imagen: "../img/ninjazx.png",
     precio: "$11.640.000",
-    color: "Verde",
 },
 {
-    marca: "Yamaha",
-    modelo: "XTZ 250cc",
-    año: 2020,
+    id: "moto4",
+    titulo: "Yamaha XTZ 250cc",
+    imagen: "../img/xtz250.png",
     precio: "$2.500.000",
-    color: "Rojo",
 }
 ]
-function solicitarVehiculo() {
-    let vehiculo = Number(prompt("¿Que tipo de vehiculo prefiere? Escriba 1 si busca auto y 2 si busca moto"))
-    if (vehiculo === 1) {
-        alert ("Genial! Ahora te pasaremos una lista de los autos que tenemos")
-        alert ("1.Chevrolet Corsa 2. Volkswagen Polo 3.Peugeot 308 4.Volkswagen Amarok 5.Audi A3 6.Ford Focus")
-        let seleccion = prompt("Elige un producto (1-" + listaAutos.length + "):");
 
-        if (seleccion >= 1 && seleccion <= listaAutos.length) {
-          let productoElegido = listaAutos[seleccion - 1];
-          alert("El precio del producto " + productoElegido.modelo + " es: " + productoElegido.precio);
-        } else {
-          alert("Selección inválida.");
-        }
-    }
-    if (vehiculo === 2){
-        alert ("Genial! Ahora te pasaremos una lista de las motocicletas que tenemos")
-        alert("1.XTZ 150cc 2.Honda Xr Tornado 250cc 3.Kawasaki Ninja ZX-6R 600cc 4.Yamaha XTZ 250cc")
-        let seleccion = prompt("Elige un producto (1-" + listaMotos.length + "):");
+const seccionProductos = document.querySelector("#seccion-productos");
+let botonesAgregar = document.querySelectorAll('.tarjeta__btn');
+const numerito = document.querySelector("#numerito")
 
-        if (seleccion >= 1 && seleccion <= listaMotos.length) {
-          let productoElegido = listaMotos[seleccion - 1];
-          alert("El precio del producto " + productoElegido.modelo + " es: " + productoElegido.precio);
-        } else {
-          alert("Selección inválida.");
-        }
-    }
-
+function cargarAutos (){
+    listaAutos.forEach(listaAutos => {
+        const div = document.createElement("div");
+        div.classList.add("tarjeta")
+        div.innerHTML = `
+            <img src="${listaAutos.imagen}" alt="${listaAutos.titulo}">
+            <h3>${listaAutos.titulo}</h3>
+            <p>${listaAutos.precio}</p>
+            <button class="tarjeta__btn" id="${listaAutos.id}">Añadir al carro</button>
+        `;
+        seccionProductos.append(div);
+    })
+    actualizarBotonesAgregar();
 }
-function solicitarPago(){
-    let pago = prompt("¿Cómo quieres realizar el pago? 1.Efectivo 2.Credito 3.Debito, escriba los numeros correspondientes")
-    alert ("Muchas gracias por tu compra!")
+function cargarMotos(){
+    listaMotos.forEach(listaMotos => {
+        const div = document.createElement("div");
+        div.classList.add("tarjeta")
+        div.innerHTML = `
+            <img src="${listaMotos.imagen}" alt="${listaAutos.titulo}">
+            <h3>${listaMotos.titulo}</h3>
+            <p>${listaMotos.precio}</p>
+            <button class="tarjeta__btn" id="${listaMotos.id}">Añadir al carro</button>
+        `;
+    seccionProductos.append(div);
+})
+actualizarBotonesAgregar();
 }
 
+cargarAutos()
+cargarMotos()
+
+function actualizarBotonesAgregar (){
+    botonesAgregar = document.querySelectorAll('.tarjeta__btn');
+    botonesAgregar.forEach (boton =>{
+        boton.addEventListener("click", agregarAlCarrito)
+    })
+}
+
+const productosEnCarrito = [];
+
+function agregarAlCarrito (e){
+    const idBoton = e.currentTarget.id;
+    const productoAgregado = listaAutos.find (listaAutos => listaAutos.id === idBoton);
+    if(productosEnCarrito.some(listaAutos => listaAutos.id === idBoton)) {
+        const index = productosEnCarrito.findIndex (listaAutos => listaAutos.id === idBoton)
+        productosEnCarrito[index].cantidad++;
+    } else {
+        productoAgregado.cantidad = 1;
+        productosEnCarrito.push(productoAgregado);
+    }
+    actualizarNumerito();
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito))
+}
+
+function actualizarNumerito(){
+    let nuevoNumerito = productosEnCarrito.reduce((acc, listaAutos) => acc + listaAutos.cantidad, 0)
+    numerito.innerText = nuevoNumerito;
+}
