@@ -130,6 +130,7 @@ form label input::placeholder {
   display: flex;
   justify-content: center;
   padding-top: 2em;
+  padding-bottom: 2em;
 }
 .boton-volver {
   text-decoration: none;
@@ -188,4 +189,8 @@ form label input::placeholder {
   border-radius: 1rem;
   text-transform: uppercase;
   cursor: pointer;
+}
+.disabled {
+  visibility: hidden;
+  display: none;
 }
