@@ -1,9 +1,16 @@
+let producto = [];
+fetch("../json/productos.json")
+    .then(response => response.json())
+    .then(data => {    
+        listaAutos = data;
+        cargarAutos(listaAutos)
+    })
 
 const seccionProductos = document.querySelector("#seccion-productos");
 let botonesAgregar = document.querySelectorAll('.tarjeta__btn');
 const numerito = document.querySelector("#numerito")
 
-function cargarAutos (){
+function cargarAutos (productoElegido){
     listaAutos.forEach(listaAutos => {
         const div = document.createElement("div");
         div.classList.add("tarjeta")
@@ -17,8 +24,6 @@ function cargarAutos (){
     })
     actualizarBotonesAgregar();
 }
-
-cargarAutos()
 
 function actualizarBotonesAgregar (){
     botonesAgregar = document.querySelectorAll('.tarjeta__btn');
@@ -37,6 +42,7 @@ function agregarAlCarrito (e){
         className: "info",
         style: {
           background: "linear-gradient(to right, #00b09b, #96c93d)",
+          borderRadius: "1rem"
         }
       }).showToast();
     if(productosEnCarrito.some(listaAutos => listaAutos.id === idBoton)) {
